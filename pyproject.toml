@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-output-sanitizer-py"
+version = "0.1.0"
+description = "Sanitize LLM outputs before HTML, SQL, shell, or markdown sinks. Python port of @mukundakatta/llm-output-sanitizer."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mukunda Rao Katta", email = "mukunda.vjcs6@gmail.com" }]
+keywords = [
+  "ai",
+  "llm",
+  "sanitizer",
+  "html",
+  "sql",
+  "shell",
+  "markdown",
+  "guardrails",
+  "security",
+  "agents",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/llm-output-sanitizer-py"
+Issues = "https://github.com/MukundaKatta/llm-output-sanitizer-py/issues"
+Source = "https://github.com/MukundaKatta/llm-output-sanitizer-py"
+PyPI = "https://pypi.org/project/llm-output-sanitizer-py/"
+"JS sibling" = "https://github.com/MukundaKatta/llm-output-sanitizer"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_output_sanitizer"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/README.md", "/LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
